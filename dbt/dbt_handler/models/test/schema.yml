@@ -1,0 +1,15 @@
+
+version: 2
+
+models:
+  - name: financial
+    description: "A test model"
+    columns:
+      - name: purchase_uid
+        description: "The primary key for this table"
+
+  # - name: hr
+  #   description: "A test model"
+  #   columns:
+  #     - name: employee_uid
+  #       description: "The primary key for this table"

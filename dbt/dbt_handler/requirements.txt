@@ -1,0 +1,4 @@
+openlineage-dbt
+openlineage-integration-common
+dbt-core
+dbt-snowflake
