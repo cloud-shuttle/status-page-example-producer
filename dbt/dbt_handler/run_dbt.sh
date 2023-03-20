@@ -63,12 +63,21 @@ while [ ! -n "$OPENLINEAGE_NAMESPACE_" ];
     done
 
 
-read -p "Please input a OPENLINEAGE_API_KEY:" OPENLINEAGE_API_KEY_
+read -p "Please input a OPENLINEAGE_COMPANY_ID:" OPENLINEAGE_COMPANY_ID_
 
-while [ ! -n "$OPENLINEAGE_API_KEY_" ]; 
+while [ ! -n "$OPENLINEAGE_COMPANY_ID_" ]; 
     do
-        read -p "Please input a OPENLINEAGE_API_KEY:" OPENLINEAGE_API_KEY_
+        read -p "Please input a OPENLINEAGE_COMPANY_ID:" OPENLINEAGE_COMPANY_ID_
     done
+
+read -p "Please input a OPENLINEAGE_TOKEN:" OPENLINEAGE_TOKEN_
+
+while [ ! -n "$OPENLINEAGE_TOKEN_" ]; 
+    do
+        read -p "Please input a OPENLINEAGE_TOKEN:" OPENLINEAGE_TOKEN_
+    done
+
+OPENLINEAGE_API_KEY_="$OPENLINEAGE_COMPANY_ID_|$OPENLINEAGE_TOKEN_"
 
 echo your input dbt user name="$DBT_USER_" dbt password="$DBT_PASSWORD_"
 echo your input dbt openlineage url="$OPENLINEAGE_URL_" openlineage namespace="$OPENLINEAGE_NAMESPACE_" openlineage APIKey="$OPENLINEAGE_API_KEY_"
