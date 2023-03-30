@@ -2,21 +2,35 @@ dbt_handler:
   target: dev
   outputs:
     dev:
-      type: snowflake
-      account: "{{ env_var('DBT_ACCOUNT') }}"
-      user: "{{ env_var('DBT_USER') }}"
-      role: PUBLIC
-      password: "{{ env_var('DBT_PASSWORD') }}"
+      type: postgres
+      host: localhost
+      user: "{{ env_var('POSTGRES_USER') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD') }}"
+      port: 5432
+      dbname: "{{ env_var('POSTGRES_DATABASE') }}"
+      schema: public
+      threads: 1
+      connect_timeout: 10 # default 10 seconds
 
-      database: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
-      warehouse: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
-      schema: "{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}"
-      threads: "{{ env_var('DBT_THREADS') | int }}"
-      client_session_keep_alive: False
-      query_tag: cloudshuttle-dbt
 
-      # optional
-      connect_retries: 0 # default 0
-      connect_timeout: 10 # default: 10
-      retry_on_database_errors: False # default: false 
-      retry_all: False  # default: false
+  # target: dev
+  # outputs:
+  #   dev:
+  #     type: snowflake
+  #     account: "{{ env_var('DBT_ACCOUNT') }}"
+  #     user: "{{ env_var('DBT_USER') }}"
+  #     role: PUBLIC
+  #     password: "{{ env_var('DBT_PASSWORD') }}"
+
+  #     database: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
+  #     warehouse: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
+  #     schema: "{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}"
+  #     threads: "{{ env_var('DBT_THREADS') | int }}"
+  #     client_session_keep_alive: False
+  #     query_tag: cloudshuttle-dbt
+
+  #     # optional
+  #     connect_retries: 0 # default 0
+  #     connect_timeout: 10 # default: 10
+  #     retry_on_database_errors: False # default: false
+  #     retry_all: False  # default: false
