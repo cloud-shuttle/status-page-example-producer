@@ -44,7 +44,7 @@ while [ ! -n "$OPENLINEAGE_TOKEN_" ];
 
 OPENLINEAGE_API_KEY_="$OPENLINEAGE_COMPANY_ID_|$OPENLINEAGE_TOKEN_"
 
-echo your input dbt user name="$DBT_USER_" dbt password="$DBT_PASSWORD_"
+echo your input dbt user name="$POSTGRES_USER_" dbt password="$POSTGRES_PASSWORD_"
 echo your input dbt openlineage url="$OPENLINEAGE_URL_" openlineage namespace="$OPENLINEAGE_NAMESPACE_" openlineage APIKey="$OPENLINEAGE_API_KEY_"
 
 #    if [ ! -n "$DBT_ACCOUNT_" ];then

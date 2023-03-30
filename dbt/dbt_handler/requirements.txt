@@ -2,3 +2,6 @@ openlineage-dbt
 openlineage-integration-common
 dbt-core
 dbt-snowflake
+SQLAlchemy
+pandas
+psycopg2-binary
