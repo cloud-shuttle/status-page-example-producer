@@ -34,9 +34,19 @@ while [ ! -n "$OPENLINEAGE_TOKEN_" ];
         read -p "Please input a OPENLINEAGE_TOKEN:" OPENLINEAGE_TOKEN_
     done
 
+read -p "Please input a OPENLINEAGE_URL:" OPENLINEAGE_URL_
+
 while [ ! -n "$OPENLINEAGE_URL_" ]; 
     do
         read -p "Please input a OPENLINEAGE_URL:" OPENLINEAGE_URL_
+    done
+
+
+read -p "Please input a OPENLINEAGE_NAMESPACE:" OPENLINEAGE_NAMESPACE_
+
+while [ ! -n "$OPENLINEAGE_NAMESPACE_" ]; 
+    do
+        read -p "Please input a OPENLINEAGE_NAMESPACE:" OPENLINEAGE_NAMESPACE_
     done
 export POSTGRES_USER=${POSTGRES_USER_}
 export POSTGRES_PASSWORD=${POSTGRES_PASSWORD_}
@@ -49,6 +59,7 @@ echo your input dbt openlineage url="$OPENLINEAGE_URL_" openlineage APIKey="$OPE
 
 export OPENLINEAGE_API_KEY=$OPENLINEAGE_API_KEY_
 export OPENLINEAGE_URL=$OPENLINEAGE_URL_
+export OPENLINEAGE_NAMESPACE=$OPENLINEAGE_NAMESPACE_
 
 # dbt run 
 
