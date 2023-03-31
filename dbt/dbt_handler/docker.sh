@@ -22,7 +22,7 @@ while [ ! -n "$POSTGRES_DATABASE_" ];
 
 docker pull postgres
 mkdir ${HOME}/postgres-data/
-docker run -d --name dev-postgres -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD_} -v ${HOME}/postgres-data/:/var/lib/postgresql/data -p 5432:5432 ${POSTGRES_DATABASE_}
+docker run -d --name dev-postgres -e POSTGRES_PASSWORD="${POSTGRES_PASSWORD_}" -v ${HOME}/postgres-data/:/var/lib/postgresql/data -p 5432:5432 "${POSTGRES_DATABASE_}"
 docker exec -it dev-postgres bash
 psql -h localhost -U postgres
 

@@ -29,9 +29,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. run docker.sh
-
-5. run postgres_dbt.sh in another terminal
+4. run "./postgres_dbt.sh" in another terminal
 
 - Input the dbt connection information
 - Input the openlineage information: token is like company_id|token
