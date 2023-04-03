@@ -1,12 +1,11 @@
-
 version: 2
 
 models:
   - name: financial
-    description: "A test model"
+    description: 'A test model'
     columns:
-      - name: purchase_uid
-        description: "The primary key for this table"
+      - name: purchase_id
+        description: 'The primary key for this table'
 
   # - name: hr
   #   description: "A test model"
